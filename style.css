@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    border-left: 50px solid rgb(135, 43, 220);
+    border-right: 50px solid rgb(135, 43, 220);
+    border-bottom: 50px solid rgb(135, 43, 220);
+    height: 92.2vh;
+    display: flex;
+    flex-direction: column;
+}
+    nav {
+    background-color: rgb(135, 43, 220);
+    color: rgb(241, 241, 241);
+    height:50px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+ nav ul{
+    list-style-type: none;
+}
+.gamecontainer
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.game
+{
+    display:grid;
+    grid-template-rows: repeat(3,10vw);
+    grid-template-columns: repeat(3,10vw);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.box{
+    border: 1.5px solid black;
+    font-size: 9vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+.box:hover{
+    background-color: rgb(221, 236, 223);
+}
+#reset
+{
+    margin: 0;
+    padding: 4px 7px;
+    background-color:rgb(231, 212, 231);
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.info{
+    font-size: 15px;
+}
+.gameinfo{
+    padding: 32px;
+    font-family:monospace;
+}
+.image .src
+{
+    position: absolute;
+    top:200px;
+    left:700px;
+    width: 0;
+   right: 150px;
+    transition:width 1s ease-in-out;
+}
+.br-0
+{
+    border-right: 0;
+}
+.bl-0
+{
+    border-left: 0;
+}
+.bt-0
+{
+    border-top: 0;
+}
+.bb-0
+{
+    border-bottom: 0;
+}
+@media screen and (max-width:800px){
+    .gamecontainer{
+        flex-wrap: wrap;
+    }
+    .gameinfo{
+        margin-top: 34px;
+    }
+    .gameinfo h1{
+        font-size: 2.5rem;
+    }
+    .info{
+        font-size:1.5rem;
+    }
+    .game{
+        display: grid;
+        grid-template-rows: repeat(3,20vw);
+        grid-template-columns: repeat(3,20vw);
+    }
+    #reset
+    {
+        padding:10px 15px;
+        font-size: 18px;
+    }
+}
+.box.winning {
+    background-color: rgb(238, 221, 144);
+    animation: highlight 0.5s infinite alternate;
+}
+@keyframes highlight {
+    from {
+        background-color: rgb(255, 170, 0);    }
+    to {
+        background-color: rgb(238, 208, 144);
+    }
+}
